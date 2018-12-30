@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="col-md-8 offset-md-2 text-center">
+    <a class="btn btn-link" data-toggle="collapse" href="#stats-container" role="button" aria-expanded="false" aria-controls="stats-container">
+      Show Stats
+    </a>
+  </div>
+</div>
+<div class="collapse" id="stats-container">
+  <div class="row card-group mt-2">
+    </div>
+    <div class="card col-md-4">
+      <div class="card-body text-center">
+        <h5 class="card-title"><%= @posts_count %></h5>
+        <p>Posts</p>
+      </div>
+    </div>
+    <div class="card col-md-4 text-center">
+      <div class="card-body">
+        <h5 class="card-title"><%= @cars_ridden %></h5>
+        <p>Cars Ridden</p>
+      </div>
+    </div>
+    <div class="card col-md-4 text-center">
+      <div class="card-body">
+        <h5 class="card-title"><%= @matched_cars %></h5>
+        <p>Cars with more than one ride</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-8 offset-md-2">
+  <% @grouped_posts.each do |key, posts| %>
+  <div class="row card mt-2">
+    <h5 class="card-header"><%= key %></h5>
+
+    <ul class="list-group list-group-flush">
+      <%  posts.each do |post| %>
+      <li class="list-group-item">
+        <span class="card-text"><%= raw(post.body).truncate(358) %></span>
+        <span class="card-text">(<%= post.created_at.strftime('%b %d, %Y') %>)</span>
+        <%= link_to "Read More", post_path(post), { class: "btn btn-link float-right" } %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+</div>

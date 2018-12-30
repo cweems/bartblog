@@ -1,0 +1,47 @@
+<%= simple_form_for @post do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= "#{pluralize(@post.errors.count, "error")} prohibited this post from being saved:" %>
+      </h2>
+      <ul>
+        <% @post.errors.full_messages.each do |msg| %>
+          <li>
+            <%= msg %>
+          </li>
+          <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="card mt-2 col-md-8 offset-md-2">
+    <div class="card-body">
+      <div class="form-inline mb-3">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">Car #</div>
+          </div>
+          <%= number_field("post", "title", class: "form-control") %>
+        </div>
+
+        <div class="btn-group btn-group-toggle ml-3" data-toggle="buttons">
+          <label class="btn btn-secondary pl-4 pr-4 active">
+            X
+            <%= radio_button("post", "car_end", "X", { checked: true }) %>
+          </label>
+          <label class="btn btn-secondary pl-4 pr-4">
+            Y
+            <%= radio_button("post", "car_end", "Y") %>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.input :body, class: "form-control", placeholder: "What's special about today?" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.button :submit, class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+<% end %>
