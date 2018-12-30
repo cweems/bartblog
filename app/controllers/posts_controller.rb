@@ -49,6 +49,7 @@ class PostsController < ApplicationController
       redirect_to post_path(post)
     else
       flash[:alert] = "Error creating new post!"
+      @post = post
       render :new
     end
   end

@@ -3,7 +3,7 @@ require 'test_helper'
 class PostsControllerTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
 
-  test "it creates a post with title and body" do
+  test "CREATE it creates a post with title and body" do
     sign_in users(:one)
     post "/posts", params: { post: { title: "My great tite", body: "Everything I ever wanted to say" } }
     assert_response :redirect
@@ -18,7 +18,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to '/users/sign_in'
   end
 
-  test "it only shows posts that belong to active user" do
+  test "CREATE it only shows posts that belong to active user" do
     sign_in users(:one)
     post "/posts", params: { post: { title: "User one post", body: "Everything I ever wanted to say" } }
     sign_out users(:one)
@@ -30,7 +30,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     assert_equal 0, @controller.view_assigns['posts'].length
   end
 
-  test "it groups posts by car title" do
+  test "GET it groups posts by car title" do
     sign_in users(:one)
 
     post "/posts", params: { post: { title: "1234", body: "Everything I ever wanted to say" } }
