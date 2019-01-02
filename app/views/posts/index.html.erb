@@ -14,19 +14,19 @@
     <div class="card-group mt-2">
       <div class="card col-md-4">
         <div class="card-body text-center">
-          <h5 class="card-title"><%= @posts_count %></h5>
+          <h5 class="font-weight-light card-title"><%= @posts_count %></h5>
           <p>Posts</p>
         </div>
       </div>
       <div class="card col-md-4 text-center">
         <div class="card-body">
-          <h5 class="card-title"><%= @cars_ridden %></h5>
+          <h5 class="font-weight-light card-title"><%= @cars_ridden %></h5>
           <p>Cars Ridden</p>
         </div>
       </div>
       <div class="card col-md-4 text-center">
         <div class="card-body">
-          <h5 class="card-title"><%= @matched_cars %></h5>
+          <h5 class="font-weight-light card-title"><%= @matched_cars %></h5>
           <p>Cars with more than one ride</p>
         </div>
       </div>
@@ -39,7 +39,7 @@
     <% if @grouped_posts.length > 0 %>
       <% @grouped_posts.each do |key, posts| %>
       <div class="card mt-2">
-        <h5 class="card-header">Car <%= key %></h5>
+        <h4 class="font-weight-light card-header">Car <%= key %></h4>
 
         <ul class="list-group list-group-flush">
           <%  posts.each do |post| %>
@@ -55,7 +55,7 @@
     <% else %>
       <div class="card border-primary mt-2">
         <div class="card-body">
-          <h2 class="card-heading">You haven't logged any rides yet.</h2>
+          <h2 class="font-weight-light card-heading">You haven't logged any rides yet.</h2>
           <p class="text-muted">BART Journal allows you to keep a daily journal based on your commute. Know the last time you were on your BART car and what you were thinking about.</p>
           <%= link_to 'Add New Post', new_post_path(), { class: 'card-link' } %>
         </div>

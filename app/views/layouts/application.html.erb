@@ -11,8 +11,8 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-2">
-      <a class="navbar-brand" href="#">BART Journal</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+      <a class="navbar-brand font-weight-light" href="#">BART Journal</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -20,10 +20,10 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <%= link_to "All Posts", posts_url(), { class: "nav-link" } %>
+            <%= link_to "All Posts", posts_url(), { class: "btn btn-link" } %>
           </li>
           <li class="nav-item">
-            <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "nav-link") %>
+            <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "btn btn-outline-primary") %>
           </li>
         </ul>
       </div>

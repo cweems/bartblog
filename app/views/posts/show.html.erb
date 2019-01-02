@@ -21,7 +21,7 @@
   <div class="col-md-8 offset-md-2">
     <div class="card">
       <div class="card-header">
-        Your Posts from Car <%= @post.title %>
+        Other Posts from Car <%= @post.title %>
       </div>
       <ul class="list-group list-group-flush">
         <% @related_posts.each do |post| %>
@@ -36,6 +36,8 @@
         <% end %>
       </ul>
     </div>
+
+    <%= link_to "Add another post", new_post_path, { class: "btn btn-primary btn-block mt-2" } %>
   </div>
 </div>
 <% end %>

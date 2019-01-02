@@ -16,26 +16,26 @@
     <div class="mt-2 col-md-8 offset-md-2">
       <div class="card">
         <div class="card-body">
-          <div class="form-inline mb-3">
+          <div class="form-inline mb-2">
             <div class="input-group">
               <div class="input-group-prepend">
                 <div class="input-group-text">Car #</div>
               </div>
-              <%= number_field("post", "title", class: "form-control", pattern: "[0-9]*", inputmode: "numeric") %>
+              <%= number_field("post", "title", class: "form-control", pattern: "[0-9]*", inputmode: "numeric", placeholder: "e.g. 1622") %>
             </div>
 
-            <div class="btn-group btn-group-toggle ml-sm-3 mt-2 mt-sm-0" data-toggle="buttons">
-              <label class="btn btn-secondary pl-4 pr-4 active">
-                X
-                <%= radio_button("post", "car_end", "X", { checked: true }) %>
-              </label>
-              <label class="btn btn-secondary pl-4 pr-4">
-                Y
-                <%= radio_button("post", "car_end", "Y") %>
-              </label>
-            </div>
           </div>
-
+          <div class="btn-group btn-block btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-outline-primary pl-4 pr-4 active">
+              X
+              <%= radio_button("post", "car_end", "X", { checked: true }) %>
+            </label>
+            <label class="btn btn-outline-primary pl-4 pr-4">
+              Y
+              <%= radio_button("post", "car_end", "Y") %>
+            </label>
+          </div>
+          <hr />
           <div class="form-group">
             <%= text_area("post", "body", class: "form-control", placeholder: "What's special about today?", rows: 4) %>
           </div>
