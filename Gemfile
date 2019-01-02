@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-#ruby "2.5.1"
+ruby "2.5.1"
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -23,7 +23,7 @@ gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-gem 'devise'
+gem 'devise', '>= 4.5.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -45,6 +45,7 @@ gem 'bootstrap', '~> 4.2.1'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'rspec-rails', '~> 3.8'
 end
 
 group :development do
