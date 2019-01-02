@@ -1,7 +1,7 @@
 <%= simple_form_for @post do |f| %>
   <% if @post.errors.any? %>
   <div class="row">
-    <div class="col-md-8 offset-md-2">
+    <div class="mt-2 col-md-8 offset-md-2">
       <ul>
         <% @post.errors.full_messages.each do |msg| %>
         <li class="text-danger">
