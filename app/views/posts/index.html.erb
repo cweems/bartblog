@@ -9,9 +9,9 @@
   </div>
 </div>
 
-<div class="collapse" id="stats-container">
+<div class="row collapse" id="stats-container">
   <div class="col-md-8 offset-md-2">
-    <div class="row card-group mt-2">
+    <div class="card-group mt-2">
       <div class="card col-md-4">
         <div class="card-body text-center">
           <h5 class="card-title"><%= @posts_count %></h5>
@@ -38,13 +38,13 @@
   <div class="col-md-8 offset-md-2">
     <% if @grouped_posts.length > 0 %>
       <% @grouped_posts.each do |key, posts| %>
-      <div class="row card mt-2">
-        <h5 class="card-header"><%= key %></h5>
+      <div class="card mt-2">
+        <h5 class="card-header">Car <%= key %></h5>
 
         <ul class="list-group list-group-flush">
           <%  posts.each do |post| %>
           <li class="list-group-item">
-            <span class="card-text"><%= raw(post.body).truncate(358) %></span>
+            <span class="card-text"><%= raw(post.body).truncate(100) %></span>
             <span class="card-text text-muted">(<%= post.created_at.strftime('%b %d, %Y') %>)</span>
             <%= link_to "Read More", post_path(post), { class: "btn btn-link float-right" } %>
           </li>
